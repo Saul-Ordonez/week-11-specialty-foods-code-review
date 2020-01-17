@@ -8,19 +8,12 @@
 Product.destroy_all
 
 50.times do |index|
-  Product.create!(name: Faker::Food.spice,
-                        description: Faker::Lorem.sentence(20, false, 0).chop,
-                        image_url: "site.com/here_is_a_picture_of_cardamom.jpg")
-end
+  Product.create!(name: Faker::Vehicle.make_and_model, cost: Faker::Number.number(digits: 5), country_of_origin: Faker::Address.country)
+  250.times do |index|
+    Review.create!(author: Faker::Movies::StarWars.character,
+      rating: Faker::Number.between(from: 1, to: 5),
+      content_body: Faker::Quote.yoda)
+    end
+  end
 
-p "Created #{Product.count} spices"
-
-Review.destroy_all
-
-250.times do |index|
-  Review.create!(name: Faker::Food.spice,
-                        description: Faker::Lorem.sentence(20, false, 0).chop,
-                        image_url: "site.com/here_is_a_picture_of_cardamom.jpg")
-end
-
-p "Created #{Review.count} spices"
+  p "Created #{Product.count} products and #{Review.count} reviews"
