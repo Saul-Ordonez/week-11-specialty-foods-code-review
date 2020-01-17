@@ -1,8 +1,12 @@
 <h1>Product: <%= @product.name %></h1>
-<h2>Review:</h2>
 <br>
-<h3>Author: <%= @review.author %></h3>
-<h3>Rating: <%= @review.rating %></h3>
+<h2>Review</h2>
+<h3>Reviewed by: <%= @review.author %></h3>
+<% if @review.rating == 1 %>
+<h3><%= @review.rating %> star</h3>
+<% else %>
+<h3><%= @review.rating %> stars</h3>
+<% end %>
 <p><%= @review.content_body %></p>
 
 <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
