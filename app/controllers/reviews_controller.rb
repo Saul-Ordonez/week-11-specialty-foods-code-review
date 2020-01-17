@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
 
   def show
     @product = Product.find(params[:product_id])
-    @review = Song.find(params[:id])
+    @review = Review.find(params[:id])
     render :show
   end
 
