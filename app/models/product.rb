@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  scope :united_states, -> { where(country_of_origin: "United States of America") }
   has_many :reviews, dependent: :destroy
   validates :name, presence: true
   validates :cost, presence: true

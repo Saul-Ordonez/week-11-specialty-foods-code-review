@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Vehicle successfully added!"
       redirect_to products_path
     else
+      flash[:alert] = "PLEASE ADD A VEHICLE"
       render :new
     end
   end

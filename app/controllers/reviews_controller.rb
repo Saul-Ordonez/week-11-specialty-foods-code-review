@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review successfully submitted!"
       redirect_to product_path(@product)
     else
+      flash[:alert] = "PLEASE WRITE A REVIEW"
       render :new
     end
   end
