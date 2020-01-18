@@ -1,13 +1,28 @@
 <h1>Products</h1>
 
 <% if @products.any? %>
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
+<ul>
+  <% @products.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+</ul>
 <% else %>
-  <p>There are no products yet.</p>
+<p>There are no products yet.</p>
+<% end %>
+
+<h3>Our most reviewed product is:</h3>
+<p> <%= @mostreviewed %> </p>
+
+<h3>Our 3 newest products:</h3>
+
+<% if @products.most_recent.any? %>
+<ul>
+  <% @products.most_recent.each do |product| %>
+  <li>  <%= link_to product.name, product_path(product)%> </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no products yet.</p>
 <% end %>
 
 <h3>Made in the U.S.A.</h3>
