@@ -32,6 +32,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
+    @product = Product.find(params[:product_id])
     if @review.update(review_params)
       redirect_to product_path(@review.product)
     else
@@ -47,7 +48,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:author, :content_body, :rating)
+    params.require(:review).permit(:author, :content_body, :rating, :product_id)
   end
 
 end

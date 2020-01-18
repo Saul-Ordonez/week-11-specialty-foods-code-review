@@ -7,13 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
 
+Review.destroy_all
+
 50.times do |index|
-  Product.create!(name: Faker::Vehicle.make_and_model, cost: Faker::Number.number(digits: 5), country_of_origin: Faker::Address.country)
-  250.times do |index|
-    Review.create!(author: Faker::Movies::StarWars.character,
-      rating: Faker::Number.between(from: 1, to: 5),
-      content_body: Faker::Quote.yoda)
-    end
+  @product = Product.create!(name: Faker::Vehicle.make_and_model,
+                            cost: Faker::Number.number(digits: 5),
+                            country_of_origin: Faker::Address.country)
+
+250.times do |index|
+  Review.create!(author: Faker::Movies::StarWars.character,
+                rating: Faker::Number.between(from: 1, to: 5),
+                content_body: Faker::Quote.yoda)
+  end
   end
 
   p "Created #{Product.count} products and #{Review.count} reviews"
