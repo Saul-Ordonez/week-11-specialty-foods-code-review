@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+     @most_reviewed_product = Product.most_reviewed_product
     render :index
   end
 

@@ -1,4 +1,4 @@
-<h1>Products</h1>
+<h1>Vehicles</h1>
 
 <% if @products.any? %>
 <ul>
@@ -7,13 +7,13 @@
   <% end %>
 </ul>
 <% else %>
-<p>There are no products yet.</p>
+<p>There are no vehicles yet.</p>
 <% end %>
 
-<h3>Our most reviewed product is:</h3>
-<p> <%= @mostreviewed %> </p>
+<h3>Our most reviewed vehicle is:</h3>
+<p> <%= @most_reviewed_product %> </p>
 
-<h3>Our 3 newest products:</h3>
+<h3>Our 3 newest vehicles:</h3>
 
 <% if @products.most_recent.any? %>
 <ul>
@@ -22,7 +22,7 @@
   <% end %>
 </ul>
 <% else %>
-<p>There are no products yet.</p>
+<p>There are no vehicles yet.</p>
 <% end %>
 
 <h3>Made in the U.S.A.</h3>
@@ -37,4 +37,4 @@
 <p>We currently have no vehicles made in the U.S.</p>
 <% end %>
 
-<p><%= link_to "Create a new product", new_product_path %></p>
+<p><%= link_to "Add a new vehicle", new_product_path %></p>
