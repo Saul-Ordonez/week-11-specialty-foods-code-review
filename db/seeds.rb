@@ -7,18 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
 
-Review.destroy_all
-
 50.times do |index|
   @product = Product.create!(name: Faker::Vehicle.make_and_model,
-                            cost: Faker::Number.number(digits: 5),
-                            country_of_origin: Faker::Address.country)
+    cost: Faker::Number.number(digits: 5),
+    country_of_origin: Faker::Address.country)
+    rand(2..6).times do
+      @product.reviews.new(author: Faker::Movies::StarWars.character,
+        rating: Faker::Number.between(from: 1, to: 5),
+        content_body: 'This is a review for this car. It is a very fast car and I like it a lot.', product_id: Faker::Number.between(from: 1, to: 50))
+        @product.save
 
-250.times do |index|
-  Review.create!(author: Faker::Movies::StarWars.character,
-                rating: Faker::Number.between(from: 1, to: 5),
-                content_body: Faker::Quote.yoda)
-  end
-  end
+      end
+    end
 
-  p "Created #{Product.count} products and #{Review.count} reviews"
+    p "Created #{Product.count} products and #{Review.count} reviews"
