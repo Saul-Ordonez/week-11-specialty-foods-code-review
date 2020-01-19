@@ -11,7 +11,7 @@ Product.destroy_all
   @product = Product.create!(name: Faker::Vehicle.make_and_model,
     cost: Faker::Number.number(digits: 5),
     country_of_origin: Faker::Address.country)
-    rand(2..6).times do
+    rand(3..7).times do
       @product.reviews.new(author: Faker::Movies::StarWars.character,
         rating: Faker::Number.between(from: 1, to: 5),
         content_body: 'This is a review for this car. It is a very fast car and I like it a lot.', product_id: Faker::Number.between(from: 1, to: 50))
