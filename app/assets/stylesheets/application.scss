@@ -13,3 +13,16 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
+ .jumbotron {
+   background-image: url("https://cdn.hipwallpaper.com/i/78/14/gDot8F.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+   color: white;
+ }
+
+ body {
+   background-color: grey;
+ }
