@@ -6,7 +6,7 @@
 
 ## Description
 
-This Ruby on Rails web application takes in user input to save products and reviews in a one-to-many relationship. The form fields allow the user to add a cost and country of origin to the product, as well as have the ability to add multiple reviews from multiple people including details about the name of the author, a 1-5 rating system, and the content of the review itself.
+This Ruby on Rails web application takes in user input to save products and reviews in a one-to-many relationship. The form fields allow the user to add a cost and country of origin to the product, as well as have the ability to add multiple reviews from multiple people including details about the name of the author, a 1-5 rating system, and the content of the review itself. This application has full authentication functionality.
 
 ## Specs
 HTTP | Route | CRUD Functionality | Description
