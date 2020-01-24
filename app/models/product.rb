@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  scope :united_states, -> { where(country_of_origin: "United States of America") }
+  scope :united_states, -> { where(country_of_origin: "USA" ) }
   scope :most_recent, -> { order(created_at: :desc).first(3) }
   scope :most_reviews, -> {(
     select("products.id, products.name, products.cost, products.country_of_origin, count(reviews.id) as reviews_count")
