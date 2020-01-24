@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
+  # before_action :authorize_admin, only: [:index, :new, :edit, :create, :update, :destroy]
 
   def index
     @products = Product.all
-     @most_reviewed_product = Product.most_reviewed_product
+     @most_reviews = Product.most_reviews
     render :index
   end
 

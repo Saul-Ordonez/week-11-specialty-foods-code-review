@@ -11,7 +11,15 @@
 <% end %>
 
 <h3>Our most reviewed vehicle is:</h3>
-<p> <%= @most_reviewed_product %> </p>
+<% if @products.most_reviews.any? %>
+<ul>
+  <% @products.most_reviews.each do |product| %>
+  <li>  <%= link_to product.name, product_path(product)%> </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no vehicles yet.</p>
+<% end %>
 
 <h3>Our 3 newest vehicles:</h3>
 
