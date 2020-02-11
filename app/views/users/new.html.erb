@@ -7,6 +7,6 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <%= f.label "Are you an Admin?" %>
-  <%= f.check_box :admin %>
+  <%= f.check_box :admin, checked_value: true, unchecked_value: false %>
   <%= f.submit "Sign Up" %>
 <% end %>

@@ -45,4 +45,6 @@
 <p>We currently have no vehicles made in the U.S.</p>
 <% end %>
 
+<% if current_user.admin == true %>
 <p><%= link_to "Add a new vehicle", new_product_path %></p>
+<% end %>

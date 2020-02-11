@@ -1,6 +1,8 @@
 class User < ApplicationRecord
+
   attr_accessor :password
   validates_confirmation_of :password
+  validates :username, :presence => true, :uniqueness => true
   validates :email, :presence => true, :uniqueness => true
   before_save :encrypt_password
 
@@ -17,4 +19,5 @@ class User < ApplicationRecord
       nil
     end
   end
+
 end
