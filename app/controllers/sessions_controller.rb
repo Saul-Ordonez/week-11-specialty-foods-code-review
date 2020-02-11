@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.authenticate(params[:email], params[:password])
     if @user
-      flash[:notice] = "Welcome back, #{@user.username}! You've successfully signed in."
+      flash[:notice] = "Welcome back, #{@user.email}! You've successfully signed in."
       session[:user_id] = @user.id
       redirect_to "/products"
     else
